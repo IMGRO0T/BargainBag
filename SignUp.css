@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+body {
+    font-family: sans-serif;
+    background-color: #91cad8;
+}
+
+div {
+    text-align: left
+}
+
+#title {
+    text-align: center;
+    font-size: 30px;
+}
