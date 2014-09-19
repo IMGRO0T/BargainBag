@@ -1,0 +1,30 @@
+h1{
+	text-align: center;
+	font-family: Garamond, serif;
+	font-size:70px;
+}
+h2{
+	text-align: center;
+	font-family: Garamond,serif;
+	font-size: 20px
+}
+nav ul{
+	margin:0;
+	padding:0 1em 0 0;
+	text-align:center
+}
+nav li{
+	display:inline;
+	padding-left:1em
+}
+#newsearch{
+	float:right;
+	padding:20px;
+}
+footer{
+
+	position:fixed;
+    bottom:0;
+    text-align: center;
+
+}
