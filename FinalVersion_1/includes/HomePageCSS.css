@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+body {
+    font-family: sans-serif;
+    background-color: #d0e4fe;
+}
+
+h1 {
+	text-align: center;
+	font-family: Garamond, serif;
+	font-size:70px;
+    padding: 18px;
+}
+
+h2 {
+	text-align: center;
+	font-family: Garamond,serif;
+    font-style: oblique;
+	font-size: 20px
+}
+
+nav ul {
+	margin:0;
+	padding:0 1em 0 0;
+	text-align:center
+}
+
+nav li {
+	display:inline;
+	padding-left:1em
+}
+
+#newsearch {
+	float:right;
+	padding:20px;
+}
+
+footer {
+	position:fixed;
+    bottom:0;
+    text-align: center;
+}
+
+a:link {
+    color: green;
+}
+
+a:visited {
+    color: #ff9300;
+}
+
+a:hover {
+    color: red;
+}

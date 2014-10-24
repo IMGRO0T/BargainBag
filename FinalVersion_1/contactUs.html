@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<html>
+<head>
+    <title>Contact Page</title>
+    <style>
+
+        nav ul {
+    margin:0;
+    height: auto;
+    padding:0 1em 0 0;
+    text-align:center; 
+    
+}
+
+nav li {
+
+    display:inline;
+    padding: 20px;
+    width: 550px;
+    height: 35px;
+    font-size: 16px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 2px 3px #333333;
+    background-color: green;
+        border-radius: 8px;
+
+}
+
+a:link {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 8px 8px 8px;
+}
+
+a:visited {
+    color:white;
+}
+
+a:hover {
+    color: orange;
+   
+}
+
+
+
+label {
+    display:block;
+    margin-top:20px;
+    letter-spacing:2px;
+}
+/* Centre the page */
+body{
+    background-color: #f5f1de;
+}
+.body {
+    display:block;
+    margin:0 auto;
+    width:576px;
+    
+}
+
+/* Centre the form within the page */
+form {
+    margin:0 auto;
+    width:459px;
+
+
+}
+
+/* Style the text boxes */
+input, textarea {
+    width:439px;
+    height:27px;
+    background:#efefef;
+    border:1px solid #dedede;
+    padding:10px;
+    margin-top:3px;
+    font-size:0.9em;
+    color:#3a3a3a;
+}
+
+textarea {
+    height:213px;
+   
+}
+order-radius:5px;
+}
+input:focus, textarea:focus {
+    border:1px solid #97d6eb;
+}
+ 
+
+    #submit:hover {
+        opacity:.9;
+    }
+
+
+    </style>
+
+</head>
+
+<body>
+    
+
+    <nav>
+                <ul>
+                    <li><a href="index.html"> Home</a></li>
+                    <li><a href="aboutUs.html"> About Us</a></li>
+                    <li><a href="signUp.html"> Register</a></li>
+                    <li><a href="contactUs.html"> Contact</a></li>
+                </ul>
+            </nav></br></br>
+
+
+
+
+
+
+    <section class="body">
+
+         
+
+      <div class="large-3 columns">
+      <h5 >Map</h5>
+       
+      <p>
+        <a href="" data-reveal-id="mapModal"><img src="images/Chicago-Map.jpg" height="210px" width="210px"/></a><br/>
+        <a href="" data-reveal-id="mapModal">View Map</a>
+      </p>
+      <p>
+        123 Bargain Way<br/>
+        Chicago, Il 60611
+      </p>
+    </div>  
+
+
+<form id = "contactform" name = "contactform">
+        
+    <label>Name</label>
+    <input name="name" placeholder="Type Here">
+            
+    <label>Email</label>
+    <input name="email" type="email" placeholder="Type Here">
+            
+    <label>Message</label>
+    <textarea name="message" placeholder="Type Here"></textarea>
+    
+
+</form>
+
+<button id="submit" onclick="myFunction()">Submit</button>
+<p id="show"></p> 
+    <div>
+
+       <script>
+function myFunction(){
+    document.getElementById("show").innerHTML = "Thank You, We will get back to you soon.";
+    //confirm("Thank You");
+    document.forms['contactform'].reset()
+}
+    </script>     
+     
+</div>
+
+
+    </section>
+
+
+
+
+    <footer class="body">
+          
+    </footer>
+
+</body>
+    </html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>gridster test</title>
+		<meta name="author" content="gyurisc">
+		<link rel="stylesheet" type="text/css" href="assets/css/jquery.gridster.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+		<style>
+		
+		nav ul {
+	margin:0;
+	padding:0 1em 0 0;
+	text-align:center
+	
+}
+
+nav li {
+	display:inline;
+	padding: 20px;
+	width: 550px;
+    height: 35px;
+    font-size: 16px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 2px 3px #333333;
+    background-color: green;
+        border-radius: 8px;
+
+}
+
+a:link {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 8px 8px 8px;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: orange;
+}
+
+form{
+	width:1000px;
+	margin:left;
+}
+.search { 
+	padding:10px 600px 10px 30px;
+	margin:3px; 
+	background:8px 6px; 
+
+}
+
+.rounded { 
+	border-radius:15px; 
+	-moz-border-radius:15px; 
+	-webkit-border-radius:15px; 
+}
+
+input[type=text]{
+	color:grey;
+}
+
+
+input[type=button], input[type=button]:hover {
+	position:relative; 
+	left:-6px;
+	border:1px solid #adc5cf;
+	background: #e4f1f9; /* Old browsers */
+	background: -moz-linear-gradient(top, #e4f1f9 0%, #d5e7f3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f1f9), color-stop(100%,#d5e7f3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* IE10+ */
+	background: linear-gradient(top, #e4f1f9 0%,#d5e7f3 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f1f9', endColorstr='#d5e7f3',GradientType=0 ); /* IE6-9 */
+	color:#7da2aa;
+	cursor: pointer;
+}
+
+.lighter {
+	width:95%;
+	height:50px;
+	padding:40px 25px;
+}
+
+.lighter input[type=text]{
+	border:1px solid red;
+	background-color:white;
+}
+.row{display: inline;}
+
+
+	</style>
+    
+    <!-- Script for Search Box suggestions    -->
+    <script>
+        function showHint(str) {
+          if (str.length==0) {
+            document.getElementById("txtHint").innerHTML="";
+            return;
+          }
+          var xmlhttp=new XMLHttpRequest();
+          xmlhttp.onreadystatechange=function() {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+              document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+            }
+          }
+          xmlhttp.open("GET","gethint.php?q="+str,true);
+          xmlhttp.send();
+        }
+</script>
+	</head>
+	<body>
+		<img id="10"src= "/~iegbor/bargainbag/images/BargainBagBanner.png" width="600" height="200"/><br><br><br>
+		 <nav>
+
+                <ul>
+                    <li><a href="/~iegbor/bargainbag/index.html"> Home</a></li>
+                     <li><a href="/~iegbor/bargainbag/aboutUs.html"> About</a></li>
+                    <li><a href="/~iegbor/bargainbag/products.html"> Product</a></li>
+                    <li><a href="/~iegbor/bargainbag/contactUs.html"> Contact</a></li>
+                </ul>
+            </nav>
+       <div class="lighter">
+<form action="result2.php" method="post" name="productform">
+	<span><input type="text" name="pno" id="pno" onkeyup="showHint(this.value)" class="search rounded" placeholder="Search..."></span> <input type="submit" name="submit" id="submit" value="Search"  />
+	<p>Suggestions: <span id="txtHint"></span></p>
+    
+</form>
+		<section class="demo">
+			<div class="gridster">
+				<ul>
+					<li data-row="1" data-col="1" data-sizex="1" data-sizey="1"><img src= "/~iegbor/bargainbag/images/logoBeats.png" width="140" height="140"></li>
+					<li data-row="2" data-col="1" data-sizex="1" data-sizey="1"><img src= "/~iegbor/bargainbag/images/uggs.jpg" width="140" height="140"></li>
+					<li data-row="2" data-col="1" data-sizex="1" data-sizey="1"><img src= "/~iegbor/bargainbag/images/sweater.jpg" width="140" height="140"></li>
+					<li data-row="3" data-col="1" data-sizex="1" data-sizey="1"><img src= "/~iegbor/bargainbag/images/ps4.jpg" width="140" height="140"></li>
+
+
+
+					<li data-row="1" data-col="2" data-sizex="2" data-sizey="1"><img src= "/~iegbor/bargainbag/images/miniBeats.jpg" width="300" height="140"></li>
+					<li data-row="2" data-col="2" data-sizex="2" data-sizey="2"><img src= "/~iegbor/bargainbag/images/redAir.jpg" width="300" height="140"></li>
+
+					<li data-row="2" data-col="1" data-sizex="1" data-sizey="1"><img src= "/~iegbor/bargainbag/images/apparelFashion.jpg" width="140" height="140"></li>
+					
+					<li data-row="1" data-col="4" data-sizex="1" data-sizey="1"><img src= "/~iegbor/bargainbag/images/kitchenWare.jpg" width="140" height="140"></li>
+					<li data-row="2" data-col="1" data-sizex="1" data-sizey="1"><img src= "/~iegbor/bargainbag/images/Samsung.jpg" width="140" height="140"></li>
+					<li data-row="2" data-col="4" data-sizex="2" data-sizey="1"><img src= "/~iegbor/bargainbag/images/sportingGoods.jpg" width="300" height="140"></li>
+					<li data-row="3" data-col="4" data-sizex="1" data-sizey="1"><img src= "/~iegbor/bargainbag/images/yellowApple.jpg" width="140" height="140"></li>				
+
+					<li data-row="2" data-col="1" data-sizex="1" data-sizey="1"><img src= "/~iegbor/bargainbag/images/pinkSurface.jpg" width="140" height="140"></li>
+					<li data-row="1" data-col="5" data-sizex="1" data-sizey="1"><img src= "/~iegbor/bargainbag/images/watches.jpg" width="140" height="140"></li>
+					
+
+									
+				</ul>
+			</div>
+
+
+		</section>
+
+     
+	
+     
+    
+		<script type="text/javascript" src="assets/jquery.js"></script>
+		<script type="text/javascript" src="assets/jquery.gridster.js" charster="utf-8"></script>
+		<script type="text/javascript">
+			var gridster;
+
+			$(function() {
+				gridtster = $(".gridster > ul").gridster({
+					widget_margins: [10, 10], 
+					widget_base_dimensions: [140, 140],
+					min_cols: 6
+				}).data('gridster');
+			});
+		</script>
+	</body>
+</html>

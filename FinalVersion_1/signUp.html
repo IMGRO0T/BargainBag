@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+<style>
+form {
+    background:white;   
+}
+h1{color: orange;
+font-size: 18px;
+}
+#sign{
+    color: orange;
+    text-align: center;
+    font-size: 28px;
+}
+.center {align:"center";}
+.right {float:"right";}
+.left {float: "left";}
+nav li {
+
+    display:inline;
+    padding: 20px;
+    width: 550px;
+    height: 35px;
+    font-size: 16px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 2px 3px #333333;
+    background-color: green;
+        border-radius: 8px;
+
+}
+a:link {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 8px 8px 8px;
+}
+
+a:visited {
+    color:white;
+}
+
+a:hover {
+    color: orange;
+   
+}
+</style>
+<!-- Load jQuery and the validate plugin -->
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+ <!-- jQuery Form Validation code (http://runnable.com/UZJ24Io3XEw2AABU/how-to-validate-forms-in-jquery-for-validation)-->
+  <script>
+  
+  // When the browser is ready...
+  $(function() {
+  
+    // Setup form validation on the #register-form element
+    $("#register-form").validate({
+    
+        // Specify the validation rules
+        rules: {
+            fname: "required",
+            lname: "required",
+            gender: "required",
+            femail: {
+                required: true,
+                email: true
+            },
+            cfemail: {
+                required: true,
+                email: true
+            },
+            fpass: {
+                required: true,
+                minlength: 8
+            },
+
+            cfpass: {
+                required: true,
+                minlength: 8
+            }
+        },
+        
+        // Specify the validation error messages
+        messages: {
+            fname: "Please enter your first name",
+            lname: "Please enter your last name",
+            gender: "Please specify your gender",
+            femail: "Please enter a valid email address",
+            cfemail: "Please enter a valid email address",
+            fpass: {
+                required: "Please provide a password",
+                minlength: "Your password must be at least 8 characters long"
+            },
+            cfpass: {
+                required: "Please confirm your password",
+                minlength: "Your password must be at least 8 characters long"
+            }
+        },
+        
+        submitHandler: function(form) {
+            form.register();
+        }
+    });
+
+  });
+  
+  </script>
+</head>
+ 
+<body>
+  <img id="10"src= "images/BargainBagBanner.png" width="600" height="200"/><br><br><br>
+  
+<div align="center">
+    <nav>
+                <ul>
+                    <li><a href="index.html"> Home</a></li>
+                    <li><a href="aboutUs.html"> About Us</a></li>
+                    <li><a href="contactUs.html"> Contact</a></li>
+                </ul>
+            </nav></br></br>
+
+<h2 style="color:orange;">Sign Up</h2>
+    <form class="pure-form pure-form-aligned" name="register" id="register-form" method="post" action="register.php" novalidate>
+    <fieldset>
+      <div class="pure-control-group">
+      <label for="fname">First Name : </label>
+      <input type="text" name="fname" id="fname" />
+    </div>
+
+    <div class="pure-control-group">
+    <label for="lname">Last Name: </label>
+     <input type="text" name="lname" id="lname" />
+   </div>
+    
+    <div class="pure-control-group">
+    <label for="femail">Email: </label> 
+    <input type="email" name="femail" id="email" />
+  </div>
+    
+      <div class="pure-control-group">
+      <label for="cfemail">Confirm Email:</label>
+      <input type="email" name="cfemail" id="cemail" />
+    </div>
+
+    <div class="pure-control-group">
+      <label for="fpass">Password: </label>
+      <input type="text" name="fpass" id="pass" />
+    </div>
+    
+    <div class="pure-control-group">
+      <label for="cfpass">Confirm Password: </label>
+      <input type="text" name="cfpass" id="cpass" />
+    </div>
+  
+</fieldset>
+
+   
+      <label for="fgender">Gender:</label>
+      
+      <input type="radio" name="fgender" id="gender" value="Male" />
+      <label for="fgender"> Male</label> 
+
+      <input type="radio" name="fgender" id="gender" value="Female" />
+      <label for="fgender"> Female</label>
+      <label for="fgender" class="error" style="display:none;">Please choose one.</label>
+
+    <h2 style="color:orange;">Shopping Interests</h2> 
+
+    <TABLE>
+      <TR>
+        <TD><input type="checkbox" name = "elect" >Electronics &nbsp;</TD>
+        <TD><input type="checkbox" name = "app" > Apparel &nbsp;</TD>
+      </TR>
+        
+        <TR>
+        <TD><input type="checkbox" name = "shoe" > Shoes &nbsp;</TD>
+       <TD><input type="checkbox" name = "jew" > Jewelry &nbsp;</TD>
+       </TR>
+      
+      <TR>
+      <TD><input type="checkbox" name = "kit"  > Kitchenware &nbsp;</TD>
+      <TD><input type="checkbox" name = "home" > Homegoods &nbsp;</TD>
+      </TR>
+      
+      <TR>
+      <TD><input type="checkbox" name = "sport" > Sports &nbsp;</TD>
+      <TD><input type="checkbox" name = "other" > Other &nbsp;</TD>
+      </TR>
+     </TABLE>
+  
+
+    
+    <p> <input type="submit" name="register" id="register" value="Register" />
+        <input type="reset" name="reset" id="reset" value="Reset" />
+    </p>
+   <p>If you already have a customer account Please <a href="login.php">click here to sign in</a>.</p>
+  </form>
+  <?php if(isset($_GET['msg']))
+  echo $_GET['msg'];
+  ?>
+    
+
+</div>
+<div id="display"></div>
+</body>
+
+</html>
+    
