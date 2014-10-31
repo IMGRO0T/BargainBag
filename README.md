@@ -17,7 +17,10 @@ Bootstrap can be downloaded here: http://getbootstrap.com/
 Bootstrap Business Casual can be downloaded here: http://startbootstrap.com/template-overviews/business-casual/
 
 ---------------------------------------------------------------------------------------------------------------------------
+
 Database and Php files
+==========
+
 The Database is MySQL and it can be hosted on any linux server or any webserver running apache. The database name is “bargainbag” and it has three tables (amazon, bestbuy, members). Two of the tables are the products tables. One table contains products from amazon and the other table has information about products from other retail websites especially bestbuy. The contents that were fielded into the database tables are stored in two files namely: amazon.txt and bestbuy.txt.
 There is a file called products.sql which contains the sql DDL commands for creating the database and the tables.
 The data definition Language (DDL) file can be loaded from the root public directory on the server by running the following command within MySQL:
@@ -47,8 +50,10 @@ INSERT INTO amazon (product_num, product_name, description, inventory, price, im
 The third table is for members who register using the form on the registration page. Upon registration each member is auto-assigned a customer ID that is displayed to the user along side the message indicating a successful registration.
 When the user tries to login using his/her email and password those credentials are checked against the email and password columns in the members database. If the information is correct the user will be taking directly to the product page where search for products would occur.
 The same principle applies to the product search. Once a user enters the name of a product it is checked against the product_name field in both product tables (amazon and bestbuy) in the database. If found, those tuples are returned and displayed to the user on the screen.
----------------------------------------------------------------------------------------------------------------------------
+
+
 Sign Up Page
+==========
 
 The form on the signup page is processed by a php file called (register.php) which is also link to a javascript file (register.js)
 The Login Page is processed by the php script embedded in the page.
