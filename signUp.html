@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Register</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+
+
+<!-- Load jQuery and the validate plugin -->
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+ <!-- jQuery Form Validation code (http://runnable.com/UZJ24Io3XEw2AABU/how-to-validate-forms-in-jquery-for-validation)-->
+  <script>
+  
+  // When the browser is ready...
+  $(function() {
+  
+    // Setup form validation on the #register-form element
+    $("#register-form").validate({
+    
+        // Specify the validation rules
+        rules: {
+            fname: "required",
+            lname: "required",
+            gender: "required",
+            femail: {
+                required: true,
+                email: true
+            },
+            cfemail: {
+                required: true,
+                email: true
+            },
+            fpass: {
+                required: true,
+                minlength: 8
+            },
+
+            cfpass: {
+                required: true,
+                minlength: 8
+            }
+        },
+        
+        // Specify the validation error messages
+        messages: {
+            fname: "Please enter your first name",
+            lname: "Please enter your last name",
+            gender: "Please specify your gender",
+            femail: "Please enter a valid email address",
+            cfemail: "Please enter a valid email address",
+            fpass: {
+                required: "Please provide a password",
+                minlength: "Your password must be at least 8 characters long"
+            },
+            cfpass: {
+                required: "Please confirm your password",
+                minlength: "Your password must be at least 8 characters long"
+            }
+        },
+        
+        submitHandler: function(form) {
+            form.register();
+        }
+    });
+
+  });
+  
+  </script>
+</head>
+
+<body>
+
+    <div class="brand"><img id="10"src= "img/BargainBagBanner.png" width="600px" height="200px"/></div>
+    <div class="address-bar">123 Bargain Way| Chicago, Illnois 60611 | 123.456.7890</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Business Casual</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="aboutUs.html">About</a>
+                    </li>
+                    <li>
+                        <a href="signUp.html">Register</a>
+                    </li>
+                    <li>
+                        <a href="contactUs.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Sign
+                        <strong>Up</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-lg-12 text-center">
+                    
+                    <h2>Register Now!
+                        <br>
+                        
+                    </h2>
+                    <p></p>
+                    
+                    <hr>
+                        <form class="pure-form pure-form-aligned" name="register" id="register-form" method="post" action="register.php" novalidate>
+    <fieldset>
+      <div class="pure-control-group">
+      <label for="fname">First Name : </label>
+      <input type="text" name="fname" id="fname" />
+    </div>
+
+    <div class="pure-control-group">
+    <label for="lname">Last Name: </label>
+     <input type="text" name="lname" id="lname" />
+   </div>
+    
+    <div class="pure-control-group">
+    <label for="femail">Email: </label> 
+    <input type="email" name="femail" id="email" />
+  </div>
+    
+      <div class="pure-control-group">
+      <label for="cfemail">Confirm Email:</label>
+      <input type="email" name="cfemail" id="cemail" />
+    </div>
+
+    <div class="pure-control-group">
+      <label for="fpass">Password: </label>
+      <input type="text" name="fpass" id="pass" />
+    </div>
+    
+    <div class="pure-control-group">
+      <label for="cfpass">Confirm Password: </label>
+      <input type="text" name="cfpass" id="cpass" />
+    </div>
+  
+</fieldset>
+
+   
+      <label for="fgender">Gender:</label>
+      
+      <input type="radio" name="fgender" id="gender" value="Male" />
+      <label for="fgender"> Male</label> 
+
+      <input type="radio" name="fgender" id="gender" value="Female" />
+      <label for="fgender"> Female</label>
+      <label for="fgender" class="error" style="display:none;">Please choose one.</label>
+
+    <h2 style="color:orange;">Shopping Interests</h2> 
+
+    <div class="center">
+        
+          <input type="checkbox" name = "elect" >Electronics &nbsp; 
+          <input type="checkbox" name = "app" > Apparel &nbsp; 
+        
+        
+          
+          <input type="checkbox" name = "shoe" > Shoes &nbsp; 
+         <input type="checkbox" name = "jew" > Jewelry &nbsp; 
+         
+      
+        
+        <input type="checkbox" name = "kit"  > Kitchenware &nbsp; 
+        <input type="checkbox" name = "home" > Homegoods &nbsp; 
+        
+      
+        
+        <input type="checkbox" name = "sport" > Sports &nbsp;
+        <input type="checkbox" name = "other" > Other &nbsp;
+     
+ 
+   </div>
+  
+
+    
+    <p> <input type="submit" name="register" id="register" value="Register" />
+        <input type="reset" name="reset" id="reset" value="Reset" />
+    </p>
+   <p>If you already have a customer account Please <a href="login.php">click here to sign in</a>.</p>
+  </form>
+  <?php if(isset($_GET['msg']))
+  echo $_GET['msg'];
+  ?>
+    
+
+</div>
+<div id="display"></div>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; Bargain Bag 2014</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
